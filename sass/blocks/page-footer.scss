@@ -1,0 +1,130 @@
+.page-footer {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 auto;
+  padding: 20px 10px;
+  background-color: #e77471;
+
+  @media #{$desktop-widths} {
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px 0 220px;
+  }
+}
+
+.page-footer__info {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 400;
+
+  .page-footer__info-title {
+    margin-top: 30px;
+    font-weight: 700;
+  }
+
+  .page-footer__info-link {
+    font-family: 'Droid Sans', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  @media #{$desktop-widths} {
+    width: 290px;
+    padding-right: 20px;
+  }
+}
+
+.page-footer__nav {
+  @media #{$desktop-widths} {
+    width: 650px;
+  }
+
+  .page-footer__nav-list {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+
+    @media #{$tablet-widths} {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media #{$desktop-widths} {
+      margin-bottom: 0;
+    }
+
+    .page-footer__checkbox {
+      display: none;
+    }
+
+    .page-footer__nav-title {
+      position: relative;
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 15px;
+      line-height: 34px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: -20px;
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-left: 5px solid #ffffff;
+      }
+
+      @media #{$tablet-widths} {
+        font-size: 12px;
+        line-height: 24px;
+        text-transform: none;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .page-footer__checkbox:checked + .page-footer__nav-title::after {
+      transform: rotate(90deg);
+    }
+
+    .page-footer__nav-item-list {
+      display: none;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      @media #{$tablet-widths} {
+        display: flex;
+        width: 80px;
+      }
+    }
+
+    .page-footer__checkbox:checked ~ .page-footer__nav-item-list {
+      display: flex;
+      padding-left: 20px;
+
+      @media #{$tablet-widths} {
+        padding-left: 0;
+      }
+    }
+
+    .page-footer__nav-link {
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 12px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Lipsum
+    link(rel='stylesheet' href='css/style.min.css')
+  body
+    section.slide
+      .slide__wrapper
+        header.page-header
+          img.page-header__logo(
+            src='../img/logo.png'
+            alt='logo'
+          )
+
+          a.page-header__icon-nav(href='#')
+
+          nav.page-header__nav
+
+            mixin page-header__nav-list(list)
+              ul.page-header__nav-list
+                each item in list
+                  li.page-header__nav-item
+                    if (item.items)
+                      a.page-header__nav-link.page-header__nav-link--inserted-list(href=item.href)= item.name
+                    else
+                      a.page-header__nav-link(href=item.href)= item.name
+
+            +page-header__nav-list([{
+              name: 'Commercial',
+              href: '#',
+              items: []
+            }, {
+              name: 'Industrial',
+              href: '#',
+              items: []
+            }, {
+              name: 'Infrastructure',
+              href: '#',
+              items: []
+            }, {
+              name: 'Resources',
+              href: '#'
+            }, {
+              name: 'Utilities',
+              href: '#'
+            }])
+
+        .slide__text-wrapper
+          h3.slide__title I want to feel what you wanted.
+          p.slide__text
+            | Trent from punchy pint when lets get some snag. Get a dog up ya
+            | moolah piece of piss trent from punchy slaps. Shazza got us some
+            | chuck a sickie heaps he hasn't got a kindie. As stands out like
+            | bush telly with as stands out like porky. She'll be right pretty
+            | spiffy trent from punchy cab sav.
+
+    section.main-content
+      .main-content__first-column
+        p.main-content__first-column-text
+         | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         | Donec leo nisi, feugiat vel placerat vitae, vulputate ac nibh.
+         | Ut scelerisque quis nulla sed tempor.
+
+        .main-content__first-column-nav
+          .main-content__nav-prev
+          .main-content__nav-next.main-content__nav-next--disabled
+
+      .main-content__second-column
+          h4.main-content__title Lorem ipsum dolor sit amet consectetur
+
+          p.main-content__second-column__text
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            | leo nisi, feugiat vel placerat vitae, vulputate ac nibh. Ut
+            | scelerisque quis nulla sed tempor. Maecenas viverra leo sed
+            | risus laoreet rutrum. Praesent lobortis ultrices vestibulum.
+            | Mauris rhoncus sagittis elit, a congue justo eleifend adipiscing.
+            | Ut pulvinar dignissim ante, at mollis justo laoreet et. Vestibulum
+            | viverra purus ligula, in placerat sapien condimentum nec. In diam
+            | nulla, pharetra dapibus molestie vitae, luctus a ante.
+
+    footer.page-footer
+      .page-footer__info
+        span.page-footer__info-tel P +64 9555 555
+        span.page-footer__info-tel F +64 9555 555
+        a.page-footer__info-mail E info@email.com
+        span.page-footer__info-title Address
+        a.page-footer__info-link(href='#') http://www.lipsum.com/feed/html
+
+      .page-footer__nav
+        mixin page-footer__nav-list(list)
+          ul.page-footer__nav-list
+            each item in list
+              li.page-footer__nav-item-title
+                input.page-footer__checkbox(id=item.id type='checkbox')
+                label.page-footer__nav-title(for=item.id)= item.title
+                +page-footer__nav-item-list (item.items)
+
+        mixin page-footer__nav-item-list(list)
+          ul.page-footer__nav-item-list
+            each item in list
+              li.page-footer__nav-item
+                a.page-footer__nav-link(href='#')= item
+
+        +page-footer__nav-list ([{
+          title: 'Services',
+          id: 'services',
+          items: [
+            'Commercial',
+            'Distribution',
+            'Gas',
+            'Generation',
+            'Industrial',
+            'Telecomms',
+            'Transmission',
+            'Water'
+          ]
+        }, {
+          title: 'Markets',
+          id: 'markets',
+          items: [
+            'Commercial',
+            'Industrial',
+            'Infrastructure',
+            'Resources',
+            'Utitlities'
+          ]
+        }, {
+          title: 'HSEQ',
+          id: 'HSEQ',
+          items: [
+            'Health & Safety Environment Quality'
+          ]
+        }, {
+          title: 'About',
+          id: 'about',
+          items: [
+            'History',
+            'Structure',
+            'People',
+            'CSR',
+            'Locations',
+            'PPV'
+          ]
+        }, {
+          title: 'Careers',
+          id: 'careers',
+          items: [
+            'Who we are',
+            'Benefits',
+            'Programmes',
+            'Our People',
+            'Roles / Vacancies'
+          ]
+        }])
+
+    script(type='text/javascript' src='js/script.js')
