@@ -8,7 +8,7 @@
   @media #{$desktop-widths} {
     flex-direction: row;
     justify-content: center;
-    padding: 40px 0 220px;
+    padding: 43px 0 220px;
   }
 }
 
@@ -19,21 +19,40 @@
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
+  text-align: right;
 
-  .page-footer__info-title {
-    margin-top: 30px;
-    font-weight: 700;
-  }
-
-  .page-footer__info-link {
-    font-family: 'Droid Sans', sans-serif;
-    color: #ffffff;
-    text-decoration: none;
+  @media #{$tablet-widths} {
+    flex-direction: row;
+    text-align: left;
   }
 
   @media #{$desktop-widths} {
+    flex-direction: column;
     width: 290px;
     padding-right: 20px;
+  }
+
+  .page-footer__info-item {
+    display: block;
+    margin-right: 20px;
+
+    @media #{$tablet-widths} {
+      display: inline;
+    }
+  }
+
+  .page-footer__info-item--title {
+    font-weight: 700;
+
+    @media #{$desktop-widths} {
+      margin-top: 25px;
+    }
+  }
+
+  .page-footer__info-item--link {
+    font-family: 'Droid Sans', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
   }
 }
 
@@ -45,7 +64,7 @@
   .page-footer__nav-list {
     margin: 0 0 20px;
     padding: 0;
-    list-style: none;
+    list-style-type: none;
 
     @media #{$tablet-widths} {
       display: flex;
@@ -62,6 +81,7 @@
 
     .page-footer__nav-title {
       position: relative;
+      padding-right: 20px;
       font-family: 'Droid Sans', sans-serif;
       font-size: 15px;
       line-height: 34px;
@@ -74,20 +94,29 @@
         content: '';
         position: absolute;
         top: 25%;
-        right: -20px;
+        right: 0;
         width: 0;
         height: 0;
         border: 5px solid transparent;
         border-left: 5px solid #ffffff;
       }
 
+      &:hover {
+        cursor: pointer;
+      }
+
       @media #{$tablet-widths} {
+        padding-right: 0;
         font-size: 12px;
         line-height: 24px;
         text-transform: none;
 
         &::after {
           display: none;
+        }
+
+        &:hover {
+          cursor: default;
         }
       }
     }
@@ -101,7 +130,7 @@
       flex-direction: column;
       margin: 0;
       padding: 0;
-      list-style: none;
+      list-style-type: none;
 
       @media #{$tablet-widths} {
         display: flex;
@@ -125,6 +154,10 @@
       font-weight: 400;
       color: #ffffff;
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

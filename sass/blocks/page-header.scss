@@ -1,9 +1,10 @@
 .page-header {
   position: relative;
   display: flex;
-  align-items: top;
+  align-content: top;
   justify-content: space-between;
   padding: 10px;
+
   @media #{$tablet-widths} {
     position: static;
     display: block;
@@ -15,10 +16,12 @@
   display: block;
   width: 73px;
   height: 73px;
+
   @media #{$tablet-widths} {
     margin: 0 auto;
   }
-  @media (min-width: 1206px) {
+
+  @media #{$desktop-widths} {
     position: absolute;
     top: 21px;
     left: 25px;
@@ -27,8 +30,9 @@
 
 .page-header__icon-nav {
   display: none;
+
   @media #{$mobile-width-only} {
-    position: relative;
+    position: absolute;
     top: 15px;
     right: 15px;
     z-index: 1;
@@ -80,31 +84,36 @@
       border-top: 1px solid #79aaaf;
     }
   }
-  @media (min-width: 1206px) {
+
+  @media #{$desktop-widths} {
     max-width: $desktop-width-wrapper;
     margin: 0 auto;
   }
 }
 
 .page-header__icon-nav--close + .page-header__nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  background-color: #89999e;
+  @media #{$mobile-width-only} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    background-color: #89999e;
+  }
 }
 
 .page-header__nav-list {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
+
   @media #{$tablet-widths} {
     display: flex;
     justify-content: space-around;
     align-content: center;
   }
-  @media (min-width: 1206px) {
+
+  @media #{$desktop-widths} {
     justify-content: flex-start;
   }
 }
@@ -113,7 +122,7 @@
   padding: 0 10px;
 
   @media #{$desktop-widths} {
-    margin-right: 60px;
+    margin-right: 65px;
     padding: 0;
   }
 }
@@ -125,20 +134,24 @@
   text-decoration: none;
   font-weight: 700;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
   &--inserted-list {
     position: relative;
-    padding-right: 5px;
+    padding-right: 10px;
 
     &::after {
       content: '';
       position: absolute;
       top: 50%;
-      right: -20px;
+      right: -10px;
       display: block;
       width: 0;
       height: 0;
-      border: 4px solid transparent;
-      border-top: 4px solid #ffffff;
+      border: 3px solid transparent;
+      border-top: 5px solid #ffffff;
     }
   }
 }

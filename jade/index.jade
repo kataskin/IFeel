@@ -1,18 +1,17 @@
 doctype html
 html(lang='en')
+
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    title Lipsum
+    title I feel
     link(rel='stylesheet' href='css/style.min.css')
+
   body
     section.slide
       .slide__wrapper
         header.page-header
-          img.page-header__logo(
-            src='../img/logo.png'
-            alt='logo'
-          )
+          img.page-header__logo(src='../img/logo.png' alt='logo')
 
           a.page-header__icon-nav(href='#')
 
@@ -56,6 +55,9 @@ html(lang='en')
             | bush telly with as stands out like porky. She'll be right pretty
             | spiffy trent from punchy cab sav.
 
+        .slide__parallax-layer.slide__parallax-layer--back
+        .slide__parallax-layer.slide__parallax-layer--base
+
     section.main-content
       .main-content__first-column
         p.main-content__first-column-text
@@ -82,11 +84,11 @@ html(lang='en')
 
     footer.page-footer
       .page-footer__info
-        span.page-footer__info-tel P +64 9555 555
-        span.page-footer__info-tel F +64 9555 555
-        a.page-footer__info-mail E info@email.com
-        span.page-footer__info-title Address
-        a.page-footer__info-link(href='#') http://www.lipsum.com/feed/html
+        span.page-footer__info-item P +64 9555 555
+        span.page-footer__info-item F +64 9555 555
+        a.page-footer__info-item E info@email.com
+        span.page-footer__info-item.page-footer__info-item--title Address
+        a.page-footer__info-item.page-footer__info-item--link(href='#') http://www.lipsum.com/feed/html
 
       .page-footer__nav
         mixin page-footer__nav-list(list)
