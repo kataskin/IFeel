@@ -1,0 +1,35 @@
+header.page-header
+  img.page-header__logo(src='../img/logo.png' alt='logo')
+
+  a.page-header__icon-nav(href='#')
+
+  nav.page-header__nav
+
+    mixin page-header__nav-list(list)
+      ul.page-header__nav-list
+        each item in list
+          li.page-header__nav-item
+            if (item.items)
+              a.page-header__nav-link.page-header__nav-link--inserted-list(href=item.href)= item.name
+            else
+              a.page-header__nav-link(href=item.href)= item.name
+
+    +page-header__nav-list([{
+      name: 'Commercial',
+      href: '#',
+      items: []
+    }, {
+      name: 'Industrial',
+      href: '#',
+      items: []
+    }, {
+      name: 'Infrastructure',
+      href: '#',
+      items: []
+    }, {
+      name: 'Resources',
+      href: '#'
+    }, {
+      name: 'Utilities',
+      href: '#'
+    }])

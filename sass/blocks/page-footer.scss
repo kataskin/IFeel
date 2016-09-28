@@ -19,11 +19,9 @@
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
-  text-align: right;
 
   @media #{$tablet-widths} {
     flex-direction: row;
-    text-align: left;
   }
 
   @media #{$desktop-widths} {
@@ -39,13 +37,25 @@
     @media #{$tablet-widths} {
       display: inline;
     }
+
+    &--tel,
+    &--mail {
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
 
   .page-footer__info-item--title {
-    font-weight: 700;
+    display: none;
+
+    @media #{$tablet-widths} {
+      display: none;
+    }
 
     @media #{$desktop-widths} {
+      display: block;
       margin-top: 25px;
+      font-weight: 700;
     }
   }
 
@@ -156,7 +166,7 @@
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        opacity: 0.6;
       }
     }
   }

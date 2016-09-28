@@ -1,6 +1,11 @@
 .main-content {
+  background-color: #ffffff;
+}
+
+.main-content__wrapper {
   position: relative;
   padding: 10px;
+  background-color: #ffffff;
 
   @media #{$desktop-widths} {
     display: flex;
