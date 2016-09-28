@@ -1,6 +1,12 @@
 .main-content {
+  margin-top: 15px;
+  background-color: #ffffff;
+}
+
+.main-content__wrapper {
   position: relative;
-  padding: 10px;
+  padding: 10px 20px;
+  background-color: #ffffff;
 
   @media #{$desktop-widths} {
     display: flex;
@@ -12,10 +18,13 @@
 }
 
 .main-content__first-column {
-  padding-bottom: 48px;
+  padding-bottom: 20px;
+  max-width: 650px;
+  margin: 0 auto;
 
   @media #{$desktop-widths} {
     width: 270px;
+    margin: 0;
     padding-bottom: 0;
     padding-right: 40px;
     border-right: 1px solid #eaeaea;
@@ -57,7 +66,7 @@
   .main-content__first-column-nav {
     display: flex;
     justify-content: flex-end;
-    margin: 10px 0 18px;
+    margin: 0 0 18px;
     padding-right: 24px;
 
     @media #{$desktop-widths} {
@@ -109,11 +118,16 @@
 }
 
 .main-content__second-column {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+
+  @media #{$tablet-widths} {
+    text-align: center;
+  }
 
   @media #{$desktop-widths} {
     max-width: 590px;
     padding-bottom: 0;
+    text-align: left;
   }
 
   .main-content__title {

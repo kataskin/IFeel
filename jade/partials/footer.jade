@@ -1,0 +1,74 @@
+footer.page-footer
+  .page-footer__info
+    a.page-footer__info-item.page-footer__info-item--tel(href='tel:+649555555') P +64 9555 555
+    span.page-footer__info-item F +64 9555 555
+    a.page-footer__info-item.page-footer__info-item--mail(href='mailto:info@email.com') E info@email.com
+    span.page-footer__info-item.page-footer__info-item--title Address
+    a.page-footer__info-item.page-footer__info-item--link(href='http://www.lipsum.com/feed/html') http://www.lipsum.com/feed/html
+
+  .page-footer__nav
+    mixin page-footer__nav-list(list)
+      ul.page-footer__nav-list
+        each item in list
+          li.page-footer__nav-item-title
+            input.page-footer__checkbox(id=item.id type='checkbox')
+            label.page-footer__nav-title(for=item.id)= item.title
+            +page-footer__nav-item-list (item.items)
+
+    mixin page-footer__nav-item-list(list)
+      ul.page-footer__nav-item-list
+        each item in list
+          li.page-footer__nav-item
+            a.page-footer__nav-link(href='#')= item
+
+    +page-footer__nav-list ([{
+      title: 'Services',
+      id: 'services',
+      items: [
+        'Commercial',
+        'Distribution',
+        'Gas',
+        'Generation',
+        'Industrial',
+        'Telecomms',
+        'Transmission',
+        'Water'
+      ]
+    }, {
+      title: 'Markets',
+      id: 'markets',
+      items: [
+        'Commercial',
+        'Industrial',
+        'Infrastructure',
+        'Resources',
+        'Utitlities'
+      ]
+    }, {
+      title: 'HSEQ',
+      id: 'HSEQ',
+      items: [
+        'Health & Safety Environment Quality'
+      ]
+    }, {
+      title: 'About',
+      id: 'about',
+      items: [
+        'History',
+        'Structure',
+        'People',
+        'CSR',
+        'Locations',
+        'PPV'
+      ]
+    }, {
+      title: 'Careers',
+      id: 'careers',
+      items: [
+        'Who we are',
+        'Benefits',
+        'Programmes',
+        'Our People',
+        'Roles / Vacancies'
+      ]
+    }])

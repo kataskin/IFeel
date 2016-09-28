@@ -57,7 +57,7 @@ gulp.task('script', function() {
 });
 
 gulp.task('html', function() {
-  gulp.src('jade/*.jade')
+  gulp.src('jade/pages/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('build'))
     .pipe(server.reload({stream: true}));
